@@ -1,0 +1,13 @@
+$body-bg: #1e1e1e;
+$body-color: white;
+
+$theme-colors: (
+    "primary": #7d5bed,
+);
+
+$nav-link-color: #7d5bed;
+$nav-link-hover-color: white;
+$nav-tabs-link-active-color: white;
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";

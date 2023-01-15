@@ -1,6 +1,6 @@
 const About = () => {
     return (
-        <article>
+        <article className='content-window'>
             <h3>About Me</h3>
             <p>
                 I am a Full-Stack Engineer, who resently graduated from General Assembly's Software Engineering Immersive program. Prior to beginning my path in engineering, I have worked as a technicain accross multiple industries, with a focus on troubleshooting electronics and low votage systems. Most recently, I am employeed by Convergint Technologies as a Lead Project Specialist, installing and maintaining IP video, card access, and intrusion detection systems for high security facilities. Since learning software development, I have been able to find success by applying my troubleshooting skills, and forward-thinking methodologies to every piece of code I write.
