@@ -1,5 +1,5 @@
 import React from "react"
-import { Image, Col, Row, Container, Button } from "react-bootstrap"
+import { Image, Col, Row, Container } from "react-bootstrap"
 
 const GameShare = () => {
     return (
