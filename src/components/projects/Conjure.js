@@ -38,7 +38,7 @@ const Conjure = () => {
                     <p className="blurb">
                         Once the campaign and backpack(s) are set up, users can navigate through the library curated by the Game Master. This can be done by looking at items through a list filtered by item type, or by using the search function. These options persist when looking through an individual inventory as well.
                     </p>
-                    <p>
+                    <p className="blurb">
                         Any item card can be "opened" to view more information, added to a backpack (if one is selected), or edited (if created by the user).
                     </p>
                 </Col>
