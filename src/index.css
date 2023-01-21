@@ -44,3 +44,20 @@ code {
     border: 3px white solid;
     border-radius: 15px;
 }
+
+.icon {
+    font-size: 3rem;
+    color: #7d5bed;
+    line-height: 4.5rem;
+    text-align: right;
+}
+
+.icon-token {
+    display: inline-block;
+    text-align: center;
+    height: 4.5rem;
+    width: 4.5rem;
+    background-color: white;
+    border-radius: 50%;
+    margin: .25rem;
+}
