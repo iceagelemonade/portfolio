@@ -1,5 +1,5 @@
 import React from "react"
-import { Image, Col, Row, Container} from "react-bootstrap"
+import { Image, Col, Row, Container } from "react-bootstrap"
 
 const Conjure = () => {
     return (
@@ -10,6 +10,17 @@ const Conjure = () => {
                     <Image src="conjure-backpack/conjure-splash.png" alt="Conjure Backpack" rounded fluid />
                 </Col>
             </Row>
+            <div style={{ textAlign: 'center' }}>
+                <div className="icon-token" >
+                    <i className={'devicon-nodejs-plain icon'}></i>
+                </div>
+                <div className="icon-token" >
+                    <i className={'devicon-express-original icon'}></i>
+                </div>
+                <div className="icon-token" >
+                    <i className={'devicon-mongodb-plain icon'}></i>
+                </div>
+            </div>
             <Row>
                 <Col>
                     <p>
@@ -27,12 +38,12 @@ const Conjure = () => {
                     </p>
                 </Col>
                 <Col>
-                <Image src="conjure-backpack/conjure-item-library.gif" alt="Conjure Backpack Item Library" rounded fluid />
+                    <Image src="conjure-backpack/conjure-item-library.gif" alt="Conjure Backpack Item Library" rounded fluid />
                 </Col>
             </Row>
             <Row>
                 <Col>
-                <Image src="conjure-backpack/conjure-search.gif" alt="Conjure Backpack Search Function" rounded fluid />
+                    <Image src="conjure-backpack/conjure-search.gif" alt="Conjure Backpack Search Function" rounded fluid />
                 </Col>
                 <Col>
                     <p className="blurb">
@@ -50,16 +61,16 @@ const Conjure = () => {
                     </p>
                 </Col>
                 <Col>
-                <Image src="conjure-backpack/conjure-add-item.gif" alt="Conjure Backpack Adding Items" rounded fluid />
+                    <Image src="conjure-backpack/conjure-add-item.gif" alt="Conjure Backpack Adding Items" rounded fluid />
                 </Col>
             </Row>
             <hr />
-            <Row style={{textAlign: 'center'}}>
+            <Row style={{ textAlign: 'center' }}>
                 <Col>
-                <a href="https://github.com/iceagelemonade/5e-conjure-backpack" target="_blank" className="btn btn-primary">Click Here to see on github!</a>
+                    <a href="https://github.com/iceagelemonade/5e-conjure-backpack" target="_blank" className="btn btn-primary">Click Here to see on github!</a>
                 </Col>
                 <Col>
-                <a href="https://conjure-backpack.fly.dev/" target="_blank" className="btn btn-primary">Click Here to test out the app!</a>
+                    <a href="https://conjure-backpack.fly.dev/" target="_blank" className="btn btn-primary">Click Here to test out the app!</a>
                 </Col>
             </Row>
         </Container>

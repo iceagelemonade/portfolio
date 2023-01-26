@@ -93,7 +93,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <Button type="submit">Submit</Button>
-                <input name="subject" value="Portfolio Form Submission" style={{display: "none"}} />
+                <input name="subject" defaultValue="Portfolio Form Submission" style={{display: "none"}} />
             </Form>
         </div>
     )

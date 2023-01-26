@@ -49,7 +49,6 @@ code {
     font-size: 3rem;
     color: #7d5bed;
     line-height: 4.5rem;
-    text-align: right;
 }
 
 .icon-token {
@@ -61,3 +60,21 @@ code {
     border-radius: 50%;
     margin: .25rem;
 }
+
+/* .icon-flip-cw {
+    animation: flip-cw infinite 6s linear;
+}
+
+.icon-flip-ccw {
+    animation: flip-ccw infinite 3s linear;
+}
+
+@keyframes flip-cw {
+    from {transform: rotateY(0deg)}
+    to {transform: rotateY(180deg)}
+}
+
+@keyframes flip-ccw {
+    from {transform: rotateY(0deg)}
+    to {transform: rotateY(90deg)}
+} */

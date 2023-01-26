@@ -5,7 +5,8 @@ let rotate = 0
 let classIndex = 0
 let wait = 0
 
-const Icon = (props) => {
+
+const Icon2 = (props) => {
     const { iconArray } = props
 
     const [currentClass, setCurrentClass] = useState(iconArray[classIndex])
@@ -34,6 +35,7 @@ const Icon = (props) => {
         return () => clearInterval(interval)
     }, [])
 
+
     const thisClass = `devicon-${currentClass} icon`
     return (
         <div className="icon-token" style={{ transform: `rotateY(${rotate}deg)` }}>
@@ -43,4 +45,4 @@ const Icon = (props) => {
 
 }
 
-export default Icon
+export default Icon2

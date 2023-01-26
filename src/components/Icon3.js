@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState} from "react"
 
 const dwell = 50
 let rotate = 0
 let classIndex = 0
 let wait = 0
 
-const Icon = (props) => {
+
+const Icon3 = (props) => {
     const { iconArray } = props
 
     const [currentClass, setCurrentClass] = useState(iconArray[classIndex])
@@ -34,13 +35,14 @@ const Icon = (props) => {
         return () => clearInterval(interval)
     }, [])
 
+
     const thisClass = `devicon-${currentClass} icon`
     return (
-        <div className="icon-token" style={{ transform: `rotateY(${rotate}deg)` }}>
+        <div className="icon-token" style={{transform: `rotateY(${rotate}deg)`}}>
             <i className={thisClass}></i>
         </div>
     )
 
 }
 
-export default Icon
+export default Icon3

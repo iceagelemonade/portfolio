@@ -11,6 +11,17 @@ const Connect = () => {
                     <Image src="connect3and5/cb3a5splash.gif" alt="Connect Between 3 & 5" rounded fluid />
                 </Col>
             </Row>
+            <div style={{ textAlign: 'center' }}>
+                <div className="icon-token" >
+                    <i className={'devicon-html5-plain icon'}></i>
+                </div>
+                <div className="icon-token" >
+                    <i className={'devicon-css3-plain icon'}></i>
+                </div>
+                <div className="icon-token" >
+                    <i className={'devicon-javascript-plain icon'}></i>
+                </div>
+            </div>
             <Row>
                 <Col>
                    <p>

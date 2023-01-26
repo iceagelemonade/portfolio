@@ -10,6 +10,20 @@ const GameShare = () => {
                     <Image src="gameshare/gameshare-splash.png" alt="GAMESHARE" rounded fluid />
                 </Col>
             </Row>
+            <div style={{ textAlign: 'center' }}>
+                <div className="icon-token" >
+                    <i className={'devicon-mongodb-plain icon'}></i>
+                </div>
+                <div className="icon-token" >
+                    <i className={'devicon-express-original icon'}></i>
+                </div>
+                <div className="icon-token" >
+                    <i className={'devicon-react-plain icon'}></i>
+                </div>
+                <div className="icon-token" >
+                    <i className={'devicon-nodejs-plain icon'}></i>
+                </div>
+            </div>
             <Row>
                 <Col>
                     <p>

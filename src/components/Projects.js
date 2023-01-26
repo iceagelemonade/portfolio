@@ -29,7 +29,7 @@ const Projects = () => {
             viewProject[key] = false
         })
         viewProject[project] = true
-        console.log(viewProject)
+
         setActiveProject(viewProject)
         setConnectButtonState(activeProject.connect)
         setConjureButtonState(activeProject.conjure)

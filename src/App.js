@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
 import Icon from './components/Icon'
+import Icon2 from './components/Icon2'
+import Icon3 from './components/Icon3'
 
 import Projects from './components/Projects'
 import About from './components/About'
@@ -17,17 +19,23 @@ const App = () => {
     const [activeTab, setActiveTab] = useState('projects')
     const iconArray = [["nodejs-plain", "express-original", "mongodb-plain"], ["python-plain", "django-plain", "postgresql-plain"], ["html5-plain", "javascript-plain", "react-plain"]]
 
-    const [icon1, setIcon1] = useState(iconArray[0][0])
-    const [icon2, setIcon2] = useState(iconArray[1][0])
-    const [icon3, setIcon3] = useState(iconArray[2][0])
+    const [spin, setSpin] = useState(true)
 
-    const [rotate1, setRotate1] = useState(0)
-    const [rotate2, setRotate2] = useState(0)
-    const [rotate3, setRotate3] = useState(0)
-
+    const animateTestArr = iconArray[2]
+    let animateIndex = 0
     useEffect(() => {
-        setInterval(setRotate1(rotate1 < 360 ? rotate1 + 1 : 0), 200)
+        const interval = setInterval(() => {
+            // console.log(animateIndex)
+            if (animateIndex === animateTestArr.length -1) {
+                animateIndex = 0
+            } else {
+                animateIndex+=1
+            }
+            setSpin(animateTestArr[animateIndex])
+        }, 20)
+        return () => clearInterval(interval)
     }, [])
+    
     return (
         <div className="conatiner-md m-3">
             <header>
@@ -38,19 +46,10 @@ const App = () => {
                     </Col>
                     <Col>
                         <div className='float-end'>
-                            {/* <Icon iconName="react-plain" />
-                            <Icon iconName="javascript-plain" />
-                            <Icon iconName="python-plain" />
-                            <Icon iconName="postgresql-plain" />
-                            <Icon iconName="nodejs-plain" />
-                            <Icon iconName="mongodb-plain" />
-                            <Icon iconName="html5-plain" />
-                            <Icon iconName="css3-plain" />
-                            <Icon iconName="django-plain" />
-                            <Icon iconName="express-original" /> */}
-                            <Icon iconName={icon1} rotate={rotate1} />
-                            <Icon iconName={icon2} rotate={rotate2} />
-                            <Icon iconName={icon3} rotate={rotate3} />
+                            <Icon iconArray={iconArray[0]}  />
+                            <Icon2 iconArray={iconArray[1]}  />
+                            <Icon3 iconArray={iconArray[2]}  />
+                            
                         </div>
                     </Col>
                 </Row>
