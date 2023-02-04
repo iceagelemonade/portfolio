@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import Icon from './components/Icon'
-import Icon2 from './components/Icon2'
-import Icon3 from './components/Icon3'
 
 import Projects from './components/Projects'
 import About from './components/About'
@@ -12,13 +10,14 @@ import Questions from './components/Questions'
 import './App.css'
 
 import { Tabs, Tab, Col, Row } from 'react-bootstrap'
+let delay = [-50, -100, -150]
+let rotate = [0, 0, 0]
+const iconArray = [["nodejs-plain", "express-original", "mongodb-plain"], ["python-plain", "django-plain", "postgresql-plain"], ["html5-plain", "javascript-plain", "react-plain"]]
+let iconIndex = [0, 0, 0]
 
 const App = () => {
 
-    // const [displayContent, setDisplayContent] = useState([])
     const [activeTab, setActiveTab] = useState('projects')
-    const iconArray = [["nodejs-plain", "express-original", "mongodb-plain"], ["python-plain", "django-plain", "postgresql-plain"], ["html5-plain", "javascript-plain", "react-plain"]]
-
     const [spin, setSpin] = useState(true)
 
     const animateTestArr = iconArray[2]
@@ -26,16 +25,49 @@ const App = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             // console.log(animateIndex)
-            if (animateIndex === animateTestArr.length -1) {
+            if (animateIndex === animateTestArr.length - 1) {
                 animateIndex = 0
             } else {
-                animateIndex+=1
+                animateIndex += 1
             }
             setSpin(animateTestArr[animateIndex])
         }, 20)
         return () => clearInterval(interval)
     }, [])
-    
+
+    useEffect(() => {
+        const int = setInterval(() => {
+            const currentRotate = rotate.slice()
+            const currentDelay = delay.slice()
+            const currentIconIndex = iconIndex.slice()
+            currentRotate.forEach((value, index) => {
+                if (value === 360) {
+                    value = 0
+                    currentDelay[index] = -50
+                }
+                if (value === 0 && currentDelay[index] < 0) {
+                    currentDelay[index]++
+                } else {
+                    if (value === 90) {
+                        value = 270
+                        currentIconIndex[index]++
+                        if (currentIconIndex[index] === iconArray[index].length) {
+                            currentIconIndex[index] = 0
+                        }
+                    }
+                    value++
+
+                }
+                currentRotate[index] = value
+            })
+            rotate = currentRotate
+            delay = currentDelay
+            iconIndex = currentIconIndex
+
+        }, 20)
+        return () => clearInterval(int)
+    }, [])
+
     return (
         <div className="conatiner-md m-3">
             <header>
@@ -46,10 +78,9 @@ const App = () => {
                     </Col>
                     <Col>
                         <div className='float-end'>
-                            <Icon iconArray={iconArray[0]}  />
-                            <Icon2 iconArray={iconArray[1]}  />
-                            <Icon3 iconArray={iconArray[2]}  />
-                            
+                            <Icon languageIcon={iconArray[0][iconIndex[0]]} rotate={rotate[0]} />
+                            <Icon languageIcon={iconArray[1][iconIndex[1]]} rotate={rotate[1]} />
+                            <Icon languageIcon={iconArray[2][iconIndex[2]]} rotate={rotate[2]} />
                         </div>
                     </Col>
                 </Row>

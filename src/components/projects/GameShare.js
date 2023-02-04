@@ -31,7 +31,7 @@ const GameShare = () => {
                     </p>
                 </Col>
             </Row>
-            <Row>
+            <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <p className="blurb">
                         GameShare was my first team project, and was made with 3 other engineers over the course of 1 week. My role in the team was back-end manager. I created the back-end entirely myself, but the project went a bit sideways so I stepped in to help on the front-end.
@@ -44,7 +44,7 @@ const GameShare = () => {
                     <Image src="gameshare/gameshare-login.gif" alt="GAMESHARE login" rounded fluid />
                 </Col>
             </Row>
-            <Row>
+            <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <Image src="gameshare/gameshare-search.gif" alt="GAMESHARE search" rounded fluid />
                 </Col>
@@ -54,7 +54,7 @@ const GameShare = () => {
                     </p>
                 </Col>
             </Row>
-            <Row>
+            <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <p className="blurb">
                         I built our profile section allows users to select a favorite game from their library to use as a user image. Users can also add their usernames from other platforms (XBOX, Playstation, etc.) so other users may find them there as well.
@@ -64,7 +64,7 @@ const GameShare = () => {
                     <Image src="gameshare/gameshare-profile.gif" alt="GAMESHARE profile" rounded fluid />
                 </Col>
             </Row>
-            <Row>
+            <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <Image src="gameshare/gameshare-review.gif" alt="GAMESHARE review" rounded fluid />
                 </Col>

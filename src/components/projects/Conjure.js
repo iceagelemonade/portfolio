@@ -28,7 +28,7 @@ const Conjure = () => {
                     </p>
                 </Col>
             </Row>
-            <Row>
+            <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <p className="blurb">
                         Game Masters can create campaigns, and add other users (as players) to it. Once the campaign is create, the creator can chose to import nearly 600 pre-built items (from the D&D source material), as well as create their own items. This same user can at any point remove items from the game, instantly making them inaccessible to the players.
@@ -41,7 +41,8 @@ const Conjure = () => {
                     <Image src="conjure-backpack/conjure-item-library.gif" alt="Conjure Backpack Item Library" rounded fluid />
                 </Col>
             </Row>
-            <Row>
+
+            <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <Image src="conjure-backpack/conjure-search.gif" alt="Conjure Backpack Search Function" rounded fluid />
                 </Col>
@@ -54,7 +55,7 @@ const Conjure = () => {
                     </p>
                 </Col>
             </Row>
-            <Row>
+            <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <p className="blurb">
                         This project is one of the ones I've enjoyed the most, as it is a tool I actually use. That is why I have decided to re-build with a React front-end, and moving my database over to mySQL. I haven't decided yet is I wish to use Django or Node for my backend yet (I'm building both).

@@ -29,7 +29,7 @@ const Connect = () => {
                     </p> 
                 </Col>
             </Row>
-            <Row>
+            <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <p className="blurb">
                         This game is made entirely using HTML, CSS, and Vanilla Javascript without the use of any third-party frameworks or libraries. All animations are achieved via DOM manipulation and JS timers.  
