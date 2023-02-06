@@ -17,7 +17,7 @@ const Projects = (props) => {
         baraka: false
     })
 
-    const [displayProject, setDisplayProject] = useState(<Conjure />)
+    const [displayProject, setDisplayProject] = useState(<Conjure tooltipText={tooltipText} />)
 
     const [connectButtonState, setConnectButtonState] = useState(false)
     const [conjureButtonState, setConjureButtonState] = useState(true)
@@ -50,6 +50,8 @@ const Projects = (props) => {
             case 'baraka':
                 setDisplayProject(<Baraka tooltipText={tooltipText} />)
                 break
+            default:
+                setDisplayProject(<Conjure tooltipText={tooltipText} />) 
         }
     }
     
