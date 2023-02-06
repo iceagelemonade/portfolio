@@ -1,7 +1,10 @@
 import React from "react"
-import { Image, Col, Row, Container, Button } from "react-bootstrap"
+import { Image, Col, Row, Container, OverlayTrigger } from "react-bootstrap"
 
-const Baraka = () => {
+const Baraka = (props) => {
+
+    const { tooltipText } = props
+
     return (
         <Container>
             <Row>
@@ -11,21 +14,31 @@ const Baraka = () => {
                 </Col>
             </Row>
             <div style={{ textAlign: 'center' }}>
-                <div className="icon-token" >
-                    <i className={'devicon-mongodb-plain icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-express-original icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-react-plain icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-nodejs-plain icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-socketio-original icon'}></i>
-                </div>
+                <OverlayTrigger placement="top" overlay={tooltipText('MongoDB')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-mongodb-plain icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('Express')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-express-original icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('React')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-react-plain icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('Node.js')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-nodejs-plain icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('Socket.IO')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-socketio-original icon'}></i>
+                    </div>
+                </OverlayTrigger>
             </div>
             <Row>
                 <Col>
@@ -33,7 +46,7 @@ const Baraka = () => {
                         Baraka is a full-stack MERN game, where up to 4 players can compete in a unique strategy boardgame. Baraka utilizes React, MongoDB, Express, NodeJs, and relies on a websocket (through SocketIO) to allow players to see the board in real time.
                     </p>
                     <p>
-                        After creating and joining a game, players take turns placing units on up to two territories (that are procedurally generated). Once this is complete, all players issue hidden commands to their units to advance to new territories, create units, earn gold, and strengthen territories. Once commands are issued, the game executes them in a specific order, meaning some commands may become invalid due to other players' actions. The last player standing wins. 
+                        After creating and joining a game, players take turns placing units on up to two territories (that are procedurally generated). Once this is complete, all players issue hidden commands to their units to advance to new territories, create units, earn gold, and strengthen territories. Once commands are issued, the game executes them in a specific order, meaning some commands may become invalid due to other players' actions. The last player standing wins.
                     </p>
                 </Col>
             </Row>
@@ -49,7 +62,7 @@ const Baraka = () => {
                 <Col>
                     <video controls loop muted autoPlay width={'100%'}>
                         <source src="baraka/baraka-gameplay.mp4" type="video/mp4" />
-                                Your browser does not support the video tag.
+                        Your browser does not support the video tag.
                     </video>
                 </Col>
             </Row>
@@ -61,16 +74,16 @@ const Baraka = () => {
                 </Col>
             </Row>
             <hr />
-            <Row style={{textAlign: 'center'}}>
+            <Row style={{ textAlign: 'center' }}>
                 <Col>
-                <a href="https://github.com/iceagelemonade/Server-Baraka-Capstone" target="_blank" className="btn btn-primary">Click Here to see the back-end on github!</a>
+                    <a href="https://github.com/iceagelemonade/Server-Baraka-Capstone" target="_blank" className="btn btn-primary">Click Here to see the back-end on github!</a>
                 </Col>
                 <Col>
-                <a href="https://github.com/iceagelemonade/Client-Baraka-Capstone" target="_blank" className="btn btn-primary">Click Here to see the front-end on github!</a>
+                    <a href="https://github.com/iceagelemonade/Client-Baraka-Capstone" target="_blank" className="btn btn-primary">Click Here to see the front-end on github!</a>
                 </Col>
             </Row>
-                    </Container>
-                    )
+        </Container>
+    )
 }
 
-                    export default Baraka
+export default Baraka

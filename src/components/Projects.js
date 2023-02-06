@@ -6,7 +6,9 @@ import Conjure from './projects/Conjure'
 import GameShare from './projects/GameShare'
 import Baraka from './projects/Baraka'
 
-const Projects = () => {
+const Projects = (props) => {
+
+    const { tooltipText } = props
 
     const [activeProject, setActiveProject] = useState({
         connect: false,
@@ -37,16 +39,16 @@ const Projects = () => {
         setBarakaButtonState(activeProject.baraka)
         switch (project) {
             case 'connect':
-                setDisplayProject(<Connect />)
+                setDisplayProject(<Connect tooltipText={tooltipText} />)
                 break
             case 'conjure':
-                setDisplayProject(<Conjure />)
+                setDisplayProject(<Conjure tooltipText={tooltipText} />)
                 break
             case 'gameShare':
-                setDisplayProject(<GameShare />)
+                setDisplayProject(<GameShare tooltipText={tooltipText} />)
                 break
             case 'baraka':
-                setDisplayProject(<Baraka />)
+                setDisplayProject(<Baraka tooltipText={tooltipText} />)
                 break
         }
     }

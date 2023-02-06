@@ -1,7 +1,10 @@
 import React from "react"
-import { Image, Col, Row, Container } from "react-bootstrap"
+import { Image, Col, Row, Container, OverlayTrigger } from "react-bootstrap"
 
-const Conjure = () => {
+const Conjure = (props) => {
+
+    const { tooltipText } = props
+
     return (
         <Container>
             <Row>
@@ -11,15 +14,21 @@ const Conjure = () => {
                 </Col>
             </Row>
             <div style={{ textAlign: 'center' }}>
-                <div className="icon-token" >
-                    <i className={'devicon-nodejs-plain icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-express-original icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-mongodb-plain icon'}></i>
-                </div>
+                <OverlayTrigger placement="top" overlay={tooltipText('Node.js')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-nodejs-plain icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('Express')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-express-original icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('MongoDB')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-mongodb-plain icon'}></i>
+                    </div>
+                </OverlayTrigger>
             </div>
             <Row>
                 <Col>

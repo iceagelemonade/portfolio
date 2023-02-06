@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Tooltip, OverlayTrigger } from 'react-bootstrap'
 
 import Icon from './components/Icon'
 
@@ -13,12 +14,13 @@ import { Tabs, Tab, Col, Row } from 'react-bootstrap'
 let delay = [-50, -100, -150]
 let rotate = [0, 0, 0]
 const iconArray = [["nodejs-plain", "express-original", "mongodb-plain"], ["python-plain", "django-plain", "postgresql-plain"], ["html5-plain", "javascript-plain", "react-plain"]]
+const popTextArray = [["Node.js", "Express", "MongoDB"], ["Python", "Django", "PostgreSQL"], ["HTML5", "JavaScript", "React"]]
 let iconIndex = [0, 0, 0]
 
 const App = () => {
 
     const [activeTab, setActiveTab] = useState('projects')
-    const [spin, setSpin] = useState(true)
+    const [spin, setSpin] = useState(null)
 
     const animateTestArr = iconArray[2]
     let animateIndex = 0
@@ -68,6 +70,12 @@ const App = () => {
         return () => clearInterval(int)
     }, [])
 
+    const tooltipText = (text) => (
+        <Tooltip>
+            {text}
+        </Tooltip>
+    )
+
     return (
         <div className="conatiner-md m-3">
             <header>
@@ -78,16 +86,16 @@ const App = () => {
                     </Col>
                     <Col>
                         <div className='float-end'>
-                            <Icon languageIcon={iconArray[0][iconIndex[0]]} rotate={rotate[0]} />
-                            <Icon languageIcon={iconArray[1][iconIndex[1]]} rotate={rotate[1]} />
-                            <Icon languageIcon={iconArray[2][iconIndex[2]]} rotate={rotate[2]} />
+                            <Icon languageIcon={iconArray[0][iconIndex[0]]} rotate={rotate[0]} popText={popTextArray[0][iconIndex[0]]} tooltipText={tooltipText} />
+                            <Icon languageIcon={iconArray[1][iconIndex[1]]} rotate={rotate[1]} popText={popTextArray[1][iconIndex[1]]} tooltipText={tooltipText} />
+                            <Icon languageIcon={iconArray[2][iconIndex[2]]} rotate={rotate[2]} popText={popTextArray[2][iconIndex[2]]} tooltipText={tooltipText} />
                         </div>
                     </Col>
                 </Row>
             </header>
             <Tabs id="main-tabs" activeKey={activeTab} onSelect={(e) => setActiveTab(e)}>
                 <Tab eventKey="projects" title="Projects">
-                    <Projects />
+                    <Projects tooltipText={tooltipText}/>
                 </Tab>
                 <Tab eventKey="about" title="About Me">
                     <About />
@@ -110,8 +118,12 @@ const App = () => {
             </main> */}
             <div className="container-fluid" style={{ textAlign: 'center', padding: '10px' }}>
                 Find me on:<br />
+                <OverlayTrigger placement="top" overlay={tooltipText('GitHub')}>
                 <a href="https://github.com/iceagelemonade" target="_blank" rel="noreferrer"><img src="logos/github-mark-white.png" alt="github link" width="40" height="40" /></a>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('LinkedIn')}>
                 <a href="https://www.linkedin.com/in/bryan-j-carr/" target="_blank" rel="noreffer"><img src="logos/LI-In-Bug.png" alt="linkedin link" height="40" /></a>
+                </OverlayTrigger>
             </div>
         </div>
     );

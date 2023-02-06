@@ -1,7 +1,10 @@
 import React from "react"
-import { Image, Col, Row, Container } from "react-bootstrap"
+import { Image, Col, Row, Container, OverlayTrigger } from "react-bootstrap"
 
-const GameShare = () => {
+const GameShare = (props) => {
+
+    const { tooltipText } = props
+
     return (
         <Container>
             <Row>
@@ -11,18 +14,26 @@ const GameShare = () => {
                 </Col>
             </Row>
             <div style={{ textAlign: 'center' }}>
-                <div className="icon-token" >
-                    <i className={'devicon-mongodb-plain icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-express-original icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-react-plain icon'}></i>
-                </div>
-                <div className="icon-token" >
-                    <i className={'devicon-nodejs-plain icon'}></i>
-                </div>
+                <OverlayTrigger placement="top" overlay={tooltipText('MongoDB')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-mongodb-plain icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('Express')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-express-original icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('React')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-react-plain icon'}></i>
+                    </div>
+                </OverlayTrigger>
+                <OverlayTrigger placement="top" overlay={tooltipText('Node.js')}>
+                    <div className="icon-token" >
+                        <i className={'devicon-nodejs-plain icon'}></i>
+                    </div>
+                </OverlayTrigger>
             </div>
             <Row>
                 <Col>
@@ -57,7 +68,7 @@ const GameShare = () => {
             <Row xs={1} sm={1} md={1} lg={2}>
                 <Col>
                     <p className="blurb">
-                        I built our profile section allows users to select a favorite game from their library to use as a user image. Users can also add their usernames from other platforms (XBOX, Playstation, etc.) so other users may find them there as well.
+                        I built our profile section, which allows users to select a favorite game from their library to use as a user image. Users can also add their usernames from other platforms (XBOX, Playstation, etc.) so other users may find them there as well.
                     </p>
                 </Col>
                 <Col>
@@ -72,18 +83,18 @@ const GameShare = () => {
                     <p className="blurb">
                         Users can also review games, which in addition to being showing on the games page, will also update the overall score of the game in .5 increments.
                     </p>
-                    <p className="blurb">
+                    {/* <p className="blurb">
                         This project faced many issues due to some poor synergy between the team, but as the week went on we all learned how to work more effectivly in teams, and were able to pull through on reaching MVP.
-                    </p>
+                    </p> */}
                 </Col>
             </Row>
             <hr />
-            <Row style={{textAlign: 'center'}}>
+            <Row style={{ textAlign: 'center' }}>
                 <Col>
-                <a href="https://github.com/iceagelemonade/player-api" target="_blank" className="btn btn-primary">Click Here to see the back-end on github!</a>
+                    <a href="https://github.com/iceagelemonade/player-api" target="_blank" className="btn btn-primary">Click Here to see the back-end on github!</a>
                 </Col>
                 <Col>
-                <a href="https://github.com/iceagelemonade/player-client" target="_blank" className="btn btn-primary">Click Here to see the front-end on github!</a>
+                    <a href="https://github.com/iceagelemonade/player-client" target="_blank" className="btn btn-primary">Click Here to see the front-end on github!</a>
                 </Col>
             </Row>
         </Container>
